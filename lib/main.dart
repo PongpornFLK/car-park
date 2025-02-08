@@ -1,8 +1,11 @@
+import 'package:cpr_application/reserv.dart';
+import 'package:cpr_application/setting.dart';
 import 'package:flutter/material.dart';
 import 'Login/signin.dart';
 import 'Login/signup.dart';
 import 'Login/welcome.dart';
 import 'home.dart';
+import 'history.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'CPR Application',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -41,7 +45,11 @@ class CprHomePage extends StatelessWidget {
         '/signin': (context) => Signin(),
         '/signup': (context) => Signup(),
         '/home': (context) => Home(),
+        '/reserv': (context) => Reserv(),
+        '/history': (context) => History(),
+        '/setting': (context) => Setting(),
       },
     );
   }
 }
+// test
