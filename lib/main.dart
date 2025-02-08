@@ -28,8 +28,8 @@ class CprHomePage extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) =>
+        //'/': (context) =>
       },
-    )
+    );
   }
 }
