@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'Login/signin.dart';
+import 'Login/signup.dart';
+import 'Login/welcome.dart';
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,9 +30,17 @@ class CprHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        useMaterial3: true,
+      ),
       initialRoute: '/',
       routes: {
-        //'/': (context) =>
+        '/': (context) => Welcome(),
+        '/signin': (context) => Signin(),
+        '/signup': (context) => Signup(),
+        '/home': (context) => Home(),
       },
     );
   }
