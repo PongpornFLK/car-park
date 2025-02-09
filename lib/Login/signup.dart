@@ -9,6 +9,10 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  // final newuserController = TextEditingController();
+  // final newemailController = TextEditingController();
+  // final newpassController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +89,7 @@ class _SignupState extends State<Signup> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     TextField(
+                      // controller: newuserController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey[100],
@@ -103,6 +108,7 @@ class _SignupState extends State<Signup> {
                       height: 15,
                     ),
                     TextField(
+                      // controller: newemailController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey[100],
@@ -121,7 +127,7 @@ class _SignupState extends State<Signup> {
                       height: 15,
                     ),
                     TextField(
-                      
+                      // controller: newpassController,
                       obscureText: true,
                       decoration: InputDecoration(
                         filled: true,
@@ -137,26 +143,54 @@ class _SignupState extends State<Signup> {
                             borderSide: BorderSide.none),
                       ),
                     ),
-                    
                   ],
                 ),
               ),
               Container(
                 height: 250,
-                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFEF4637), elevation: 3),
+                          backgroundColor: const Color(0xFFEF4637),
+                          elevation: 3),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Home()),
-                        );
+                        //if (newuserController.text.isEmpty ||
+                        //    newpassController.text.isEmpty || newemailController.text.isEmpty) {
+                        //  ScaffoldMessenger.of(context).showSnackBar(
+                        //    SnackBar(
+                        //      content: Text(
+                        //        "Fail",
+                        //        style: TextStyle(
+                        //            color: Colors.white,
+                        //            fontWeight: FontWeight.bold),
+                        //      ),
+                        //      backgroundColor:
+                        //          const Color(0xFFEF4637),
+                        //    ),
+                        //  );
+                        //} else {
+                        //  ScaffoldMessenger.of(context).showSnackBar(
+                        //    SnackBar(
+                        //      content: Text(
+                        //        "Success",
+                        //        style: TextStyle(
+                        //            color: Colors.black,
+                        //            fontWeight: FontWeight.bold),
+                        //      ),
+                        //      backgroundColor: const Color(0xFF29CE79),
+                        //    ),
+                        //  );
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context) => Home()),
+                         );
+                        //}
                       },
                       child: Padding(
-                        padding:
-                            const EdgeInsets.symmetric(vertical: 15, horizontal: 110),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 110),
                         child: Text(
                           "GET STARTED",
                           style: TextStyle(
@@ -170,7 +204,6 @@ class _SignupState extends State<Signup> {
                   ],
                 ),
               ),
-              
             ],
           ),
         ),

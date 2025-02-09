@@ -33,59 +33,60 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFF03174C),
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Image.asset(
               "assets/images/LogoCARPAKING.png",
-              height: 60,
-              width: 120,
+              height: 40,
+              width: 90,
             ),
           ],
         ),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
+
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor:
-            const Color(0xFF03174C), // เปลี่ยนสีพื้นหลังของ BottomNavigationBar
-        selectedItemColor: Colors.white, // เปลี่ยนสีไอคอนที่เลือก
-        unselectedItemColor: Colors.grey[400], // เปลี่ยนสีไอคอนที่ไม่ได้เลือก
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Reservation',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'Setting',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-  
-        onTap: _onItemTapped,
+      bottomNavigationBar: Container(
+        height: 75,
+        decoration: BoxDecoration(
+          boxShadow: [ BoxShadow(
+            color: Colors.black45,
+            spreadRadius: 3,
+            blurRadius: 10
+          ),]
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: const Color(
+              0xFF03174C), 
+          selectedItemColor: Colors.white, 
+          unselectedItemColor: Colors.grey[400],
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.flag),
+              label: 'Reservation',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: 'History',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.manage_accounts_rounded),
+              label: 'Setting',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+        ),
       ),
-      // body: Center(
-      //   child: Padding(padding: EdgeInsets.all(15),
-      //   child: Column(
-      //     children: [
-      //       Text("PARKING ZONE"),
-      //       Divider(height: 50,)
-      //     ],
-      //   ),
-      //   ),
-      // ),
     );
   }
 }

@@ -40,12 +40,12 @@ class Welcome extends StatelessWidget {
                           backgroundColor: const Color(0xFFEF4637), elevation: 7),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Signup()));
+                            MaterialPageRoute(builder: (context) => Signin()));
                       },
                       child: Padding(
                         padding:
                             const EdgeInsets.symmetric(vertical: 15, horizontal: 120),
-                        child: Text("SING UP",
+                        child: Text("LOG IN",
                             style: TextStyle(color: Colors.white, fontSize: 16)),
                       ),
                     ),
@@ -58,12 +58,12 @@ class Welcome extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Signin(),
+                                builder: (context) => Signup(),
                               ),
                             );
                           },
                           child: Text(
-                            "LOG IN",
+                            "SIGN UP",
                             style: TextStyle(color: const Color(0xFFEF4637)),
                           ),
                         ),

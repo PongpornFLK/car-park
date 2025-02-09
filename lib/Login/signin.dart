@@ -1,4 +1,3 @@
-
 import 'package:cpr_application/Login/signup.dart';
 import 'package:cpr_application/home.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,9 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
+  // final userController = TextEditingController();
+  // final passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +30,16 @@ class _SigninState extends State<Signin> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(mainAxisAlignment: MainAxisAlignment.center,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.waving_hand_rounded , size: 32, color: Colors.amber,),
+                        Icon(
+                          Icons.waving_hand_rounded,
+                          size: 32,
+                          color: Colors.amber,
+                        ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 20 , top: 5 ),
+                          padding: const EdgeInsets.only(left: 20, top: 5),
                           child: Text(
                             "Welcome Back!",
                             style: TextStyle(
@@ -94,6 +101,7 @@ class _SigninState extends State<Signin> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     TextField(
+                      // controller: userController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey[100],
@@ -112,6 +120,7 @@ class _SigninState extends State<Signin> {
                       height: 25,
                     ),
                     TextField(
+                      // controller: passController,
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.grey[100],
@@ -134,10 +143,37 @@ class _SigninState extends State<Signin> {
                           backgroundColor: const Color(0xFFEF4637),
                           elevation: 3),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Home()),
-                        );
+                        //if (userController.text.isEmpty ||
+                        //    passController.text.isEmpty) {
+                        //  ScaffoldMessenger.of(context).showSnackBar(
+                        //    SnackBar(
+                        //      content: Text(
+                        //        "Fail",
+                        //        style: TextStyle(
+                        //            color: Colors.white,
+                        //            fontWeight: FontWeight.bold),
+                        //      ),
+                        //      backgroundColor:
+                        //          const Color(0xFFEF4637),
+                        //    ),
+                        //  );
+                        //} else {
+                        //  ScaffoldMessenger.of(context).showSnackBar(
+                        //    SnackBar(
+                        //      content: Text(
+                        //        "Success",
+                        //        style: TextStyle(
+                        //            color: Colors.black,
+                        //            fontWeight: FontWeight.bold),
+                        //      ),
+                        //      backgroundColor: const Color(0xFF29CE79),
+                        //    ),
+                        //  );
+                         Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context) => Home()),
+                         );
+                        //}
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
